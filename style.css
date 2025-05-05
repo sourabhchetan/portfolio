@@ -1,0 +1,259 @@
+/* ===== Reset and Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* ===== Theme Variables ===== */
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #0d1117;
+    --accent-color: #00b7c2;
+    --card-bg: #f4f4f4;
+  }
+  
+  body.dark {
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
+    --accent-color: #58a6ff;
+    --card-bg: #161b22;
+  }
+  
+  /* ===== Navigation ===== */
+  .nav {
+    background-color: var(--card-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav h1 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+  }
+  
+  .nav nav a {
+    margin-left: 1.2rem;
+    color: var(--text-color);
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .nav nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background-color: var(--accent-color);
+    transition: width 0.3s;
+  }
+  
+  .nav nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* ===== Toggle Theme Button ===== */
+  .toggle-theme {
+    margin-left: 20px;
+  }
+  
+  .toggle-theme label {
+    cursor: pointer;
+    font-size: 1.4rem;
+  }
+  
+  /* ===== Section Styles ===== */
+  section {
+    padding: 5rem 2rem;
+    background-color: var(--bg-color);
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+  }
+  
+  /* ===== Profile Section ===== */
+  .profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .photo img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    animation: bounce 1.5s infinite ease-in-out alternate;
+  }
+  
+  .details h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .details h3 {
+    font-weight: normal;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .details h2 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--text-color);
+  }
+  
+  /* ===== About Section ===== */
+  #about p {
+    max-width: 800px;
+    margin: 1rem auto;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  /* ===== Skills ===== */
+  .skills ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+  }
+  
+  .skills li {
+    background-color: var(--card-bg);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+  }
+  
+  /* ===== Resume ===== */
+  .download-button {
+    display: inline-block;
+    text-align: center;
+    padding: 0.75rem 2rem;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .download-button:hover {
+    background-color: #007f8a;
+  }
+  
+  /* ===== Contact ===== */
+  .contact-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  
+  .contact-text {
+    max-width: 800px;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .social-icon {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .social-icon:hover {
+    color: var(--text-color);
+    transform: scale(1.2);
+  }
+  
+  /* ===== Footer ===== */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--card-bg);
+    font-size: 0.9rem;
+    color: var(--text-color);
+  }
+  
+  /* ===== Animations ===== */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* ===== Responsive Design ===== */
+  @media (max-width: 768px) {
+    .profile {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .nav nav {
+      margin-top: 1rem;
+    }
+  }
+  

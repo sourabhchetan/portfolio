@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>SOURABH</title>
+</head>
+<body>
+
+    <body>
+        <div class="nav">
+            <h1>Sourabh Chetan</h1>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+        <div class="toggle-theme">
+            <label onclick="document.body.classList.toggle('dark')">🌙</label>
+          </div>    
+<section id="home">
+    <div class="container profile">
+      <div class="photo">
+        <img src="sourabh.jpeg" alt="Your Name" />
+      </div>
+      <div class="details">
+        <h1>Hi, I'm <span style="color: #00b7c2;">Sourabh Chetan</span></h1>
+        <h3>A Passionate Full-Stack Developer & MCA Student</h3>
+        <h2>
+          I specialize in building full-stack web applications and innovative software solutions using modern technologies. With a strong foundation in Java, Python, React, and Django, I thrive on turning ideas into working, user-friendly products.
+        </h2>
+      </div>
+    </div>
+  </section>
+  
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+<p>I'm Sourabh Chetan, an MCA student at IMS Engineering College, passionate about photography and technology. I serve as the photographer for my college's events, Gyan ke Bytes, and am skilled in programming with experience in languages like C, C++, Python, Java, HTML, and CSS.</p>
+<p>Along with technical expertise, I create multilingual content in English, Bhojpuri, and Hindi. I thrive in both independent and collaborative projects, driven by curiosity and a passion for continuous learning. My goal is to innovate and contribute to impactful projects while developing professionally in the tech industry.</p>
+
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills">
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Python</li>
+                        <li>C Programming</li>
+                        <li>C++ Programming</li>
+                        <li>Java</li>
+                        <li>Photography</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="resume">
+            <div class="container">
+                <h2 class="section-title">Resume</h2>
+                <p style="text-align: center; margin-bottom: 30px;">Download my resume to learn more about my education,
+                    experience, and achievements.</p>
+                <div class="resume-section" style="margin-top: 0;">
+                    <a href="sourabh_cv.pdf" class="download-button">
+                        <i class="fas fa-download"></i>Download Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-icons">
+                    <div class="contact-text">
+                        Feel free to get in touch with me through multiple platforms: You can connect with me on
+                        LinkedIn to see my professional background, network, and explore potential
+                        collaborations. On GitHub, you'll find a collection of my projects, contributions,
+                        and coding journey that showcases my skills and passion for technology. If you prefer a more
+                        direct
+                        approach, don't hesitate to send me an email for any inquiries, feedback, or if
+                        you'd like to discuss ideas, opportunities, or projects. I'm always open to new connections and
+                        eager to collaborate on exciting ventures!
+                    </div>
+                    <div class="social-icons">
+                        <a href="mailto:sourabhchetan1605@hotmail.com" class="social-icon email" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/sourabhchetan" class="social-icon github" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/-sourabhchetan/" class="social-icon linkedin"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>&copy; 2025 Sourabh chetan</p>
+        </footer>
+        <script src="./script.js"></script>
+        <!-- <script src="./type.js"></script> -->
+        <script src="./home.js"></script>
+        <script src="./nav.js"></script>
+    </body>
+</html>
+<script>
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+  
+    // Check saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+      toggle.checked = true;
+    }
+  
+    toggle.addEventListener('change', () => {
+      body.classList.toggle('dark');
+      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+  
