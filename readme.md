@@ -49,10 +49,7 @@ A Master's in Computer Applications (MCA) student at IMS Engineering College, Gh
 
 ---
 
-## 📷 Screenshots
 
-![Home Page Screenshot](https://user-images.githubusercontent.com/your-screenshot-link/home.png)  
-*(Update with your actual screenshots if needed)*
 
 ---
 
