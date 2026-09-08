@@ -165,6 +165,17 @@ section.on-dark{
     box-shadow:0 0 10px var(--accent);
 }
 
+.logo-mark{
+    flex-shrink:0;
+    border-radius:9px;
+    box-shadow:0 0 0 0 transparent;
+    transition:box-shadow 0.25s ease;
+}
+
+.logo:hover .logo-mark{
+    box-shadow:0 0 14px rgba(34,211,164,0.35);
+}
+
 .nav-links{
     display:flex;
     align-items:center;
@@ -495,6 +506,45 @@ section.on-dark{
 .building-strip-inner > a:hover{transform:translateX(3px);}
 
 /* =========================================================
+   WHAT I'M LOOKING FOR — thin strip
+   ========================================================= */
+.looking-for-strip{
+    background:var(--bg-light);
+    border-bottom:1px solid var(--line-light);
+}
+
+.looking-for-inner{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px 22px;
+    padding:16px 6%;
+}
+
+.looking-for-label{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--font-mono);
+    font-size:0.75rem;
+    letter-spacing:0.03em;
+    color:var(--accent-dim);
+    white-space:nowrap;
+}
+
+.looking-for-tags{
+    color:var(--text-body);
+    font-weight:600;
+    font-size:0.92rem;
+}
+
+.looking-for-tags .sep{
+    color:var(--text-muted);
+    font-weight:400;
+    margin:0 2px;
+}
+
+/* =========================================================
    ABOUT
    ========================================================= */
 #about{background:var(--panel-light);}
@@ -672,6 +722,35 @@ section.on-dark{
 
 .project-body p{color:var(--text-muted);margin-bottom:14px;}
 
+.project-media{margin-bottom:22px;}
+
+.project-media-placeholder{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    min-height:160px;
+    border:1px dashed var(--line-dark);
+    border-radius:var(--radius-md);
+    color:var(--text-onDark-muted);
+    background:rgba(231,236,239,0.03);
+}
+
+.project-media-placeholder i{font-size:1.4rem;opacity:0.6;}
+
+.project-media-placeholder span{
+    font-family:var(--font-mono);
+    font-size:0.78rem;
+    letter-spacing:0.02em;
+}
+
+.project-card:not(.featured) .project-media-placeholder{
+    border-color:var(--line-light);
+    color:var(--text-muted);
+    background:rgba(15,23,42,0.02);
+}
+
 .ev-detail-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -713,8 +792,9 @@ section.on-dark{
 .arch-flow{
     display:flex;
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
     gap:6px;
+    text-align:center;
 }
 
 .arch-flow .arch-node{
@@ -730,7 +810,6 @@ section.on-dark{
 .arch-flow i{
     color:var(--text-onDark-muted);
     font-size:0.75rem;
-    margin-left:14px;
 }
 
 .repo-private{
@@ -854,6 +933,36 @@ section.on-dark{
     transform:translateY(-3px);
 }
 
+.github-stats{
+    display:none;
+    gap:28px;
+    margin-top:22px;
+    padding-top:20px;
+    border-top:1px solid var(--line-light);
+    flex-wrap:wrap;
+}
+
+.github-stats.show-stats{display:flex;}
+
+.github-stats .stat-item{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+}
+
+.github-stats .stat-item b{
+    font-family:var(--font-display);
+    font-size:1.15rem;
+    color:var(--text-body);
+}
+
+.github-stats .stat-item span{
+    font-family:var(--font-mono);
+    font-size:0.72rem;
+    color:var(--text-muted);
+    letter-spacing:0.02em;
+}
+
 /* =========================================================
    ACHIEVEMENTS
    ========================================================= */
@@ -961,6 +1070,14 @@ footer{
     font-size:0.82rem;
     font-family:var(--font-mono);
     border-top:1px solid var(--line-dark);
+}
+
+.footer-inner{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
 }
 
 /* =========================================================

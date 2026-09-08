@@ -152,4 +152,33 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
+    /* ---------- GITHUB STATS (live data only, never hardcoded) ---------- */
+    const githubStatsEl = document.getElementById("githubStats");
+
+    if (githubStatsEl) {
+        fetch("https://api.github.com/users/sourabhchetan")
+            .then((res) => {
+                if (!res.ok) throw new Error("GitHub API request failed");
+                return res.json();
+            })
+            .then((data) => {
+                const repos = data.public_repos;
+                const followers = data.followers;
+
+                if (typeof repos !== "number" || typeof followers !== "number") {
+                    return;
+                }
+
+                githubStatsEl.innerHTML = `
+                    <div class="stat-item"><b>${repos}</b><span>public repos</span></div>
+                    <div class="stat-item"><b>${followers}</b><span>followers</span></div>
+                `;
+                githubStatsEl.classList.add("show-stats");
+            })
+            .catch(() => {
+                // Fetch failed or rate-limited — leave the section hidden
+                // rather than showing stale or fabricated numbers.
+            });
+    }
+
 });
